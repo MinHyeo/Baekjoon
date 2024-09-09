@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\Baekjoon\\",
+  "WorkspaceRootPath": "C:\\Users\\msi\\Documents\\GitHub\\Baekjoon\\Baekjoon\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F371762-9988-419C-8F4B-91769B98FE81}|Baekjoon\\Baekjoon.vcxproj|C:\\Users\\user\\source\\repos\\Baekjoon\\Baekjoon\\1107.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{5F371762-9988-419C-8F4B-91769B98FE81}|Baekjoon\\Baekjoon.vcxproj|C:\\Users\\msi\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1107.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5F371762-9988-419C-8F4B-91769B98FE81}|Baekjoon\\Baekjoon.vcxproj|solutionrelative:Baekjoon\\1107.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -14,30 +14,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "1107.cpp",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Baekjoon\\Baekjoon\\1107.cpp",
-              "RelativeDocumentMoniker": "Baekjoon\\1107.cpp",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\Baekjoon\\Baekjoon\\1107.cpp",
-              "RelativeToolTip": "Baekjoon\\1107.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-08T16:20:00.483Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 287,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "1107.cpp",
+              "DocumentMoniker": "C:\\Users\\msi\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1107.cpp",
+              "RelativeDocumentMoniker": "Baekjoon\\1107.cpp",
+              "ToolTip": "C:\\Users\\msi\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1107.cpp",
+              "RelativeToolTip": "Baekjoon\\1107.cpp",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAADAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-08T16:20:00.483Z",
+              "EditorCaption": ""
             }
           ]
         }
