@@ -11,10 +11,6 @@
 
 using namespace std;
 
-//1. + / -버튼으로만 이동이 가능한가 ?
-//2. target number 보다 큰 / 작은 숫자를 입력해야하는지 판단
-//3. 
-
 //번호 크기 구하는 함수
 int GetDigitCount(int number);
 //+/-버튼으로만 이동이 가능한지 판단
@@ -22,6 +18,8 @@ bool DecideOnlyButton(int targetNum);
 //숫자의 자릿 수 분해
 template <typename T>
 vector<T> GetDigits(T number);
+//번호가 고장난 버튼인지 체크
+bool CheckBrokenNumber(int number, int brokenNum[]);
 //목표 채널 값에 고장난 버튼이 있는지 확인
 bool *CheckTargetNumber(int targetNum, int brokenNum[]);
 
@@ -47,6 +45,7 @@ int main() {
 		//이동하려고 하는 채널보다 큰/작은 숫자를 입력해야하는지 판단
 		bool* brokenNumberPosition = CheckTargetNumber(targetNum, brokenNum);
 
+		//체크한 숫자가 (커지면/작아지면) 그 다음 숫자는 가장 (작은 수/큰 수)로 만들어야 됨
 	}
 
 	return 0;
@@ -81,6 +80,17 @@ vector<T> GetDigits(T number) {
 
 	return digits;
 }
+/// <summary>번호가 고장난 버튼인지 체크</summary>
+bool CheckBrokenNumber(int number, int brokenNum[]) {
+	int brokenNumberLength = sizeof(brokenNum) / sizeof(*brokenNum);
+
+	for (int i = 0; i < brokenNumberLength; i++) {
+		if (number == brokenNum[i]) {
+			return true;
+		}
+	}
+	return false;
+}
 /// <summary>목표 채널에 고장난 버튼의 숫자가 존재하는지 체크</summary>
 bool *CheckTargetNumber(int targetNum, int brokenNum[]) {
 	vector<int> targetNumber = GetDigits<int>(targetNum);
@@ -90,14 +100,7 @@ bool *CheckTargetNumber(int targetNum, int brokenNum[]) {
 	bool brokenNumberPosition[MAXNUMBERLENGTH];
 
 	for (int i = 0; i < targetNumberLength; i++) {
-		for (int j = 0;j < brokenNumberLength; j++) {
-			if (targetNumber[i] == brokenNum[j]) {
-				brokenNumberPosition[i] = true;
-				break;
-			}
-
-			brokenNumberPosition[i] = false;
-		}
+		brokenNumberPosition[i] = CheckBrokenNumber(targetNumber[i], brokenNum);
 	}
 
 	return brokenNumberPosition;
