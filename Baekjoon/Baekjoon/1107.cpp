@@ -3,7 +3,7 @@
 #include <vector>
 #include <cmath>
 
-#pragma region »ó¼ö°ª
+#pragma region ìƒìˆ˜ê°’
 #define BROKENBUTTON 10
 #define CURRENTNUMBER 100
 #define MAXNUMBERLENGTH 6
@@ -11,17 +11,20 @@
 
 using namespace std;
 
-//¹øÈ£ Å©±â ±¸ÇÏ´Â ÇÔ¼ö
+//ï¿½ï¿½È£ Å©ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
 int GetDigitCount(int number);
-//+/-¹öÆ°À¸·Î¸¸ ÀÌµ¿ÀÌ °¡´ÉÇÑÁö ÆÇ´Ü
+//+/-ï¿½ï¿½Æ°ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½
 bool DecideOnlyButton(int targetNum);
-//¼ıÀÚÀÇ ÀÚ¸´ ¼ö ºĞÇØ
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¸ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 template <typename T>
 vector<T> GetDigits(T number);
-//¹øÈ£°¡ °íÀå³­ ¹öÆ°ÀÎÁö Ã¼Å©
+//ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½å³­ ï¿½ï¿½Æ°ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
 bool CheckBrokenNumber(int number, int brokenNum[]);
-//¸ñÇ¥ Ã¤³Î °ª¿¡ °íÀå³­ ¹öÆ°ÀÌ ÀÖ´ÂÁö È®ÀÎ
+//ï¿½ï¿½Ç¥ Ã¤ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½å³­ ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 bool *CheckTargetNumber(int targetNum, int brokenNum[]);
+int FindNumber(int number, int brokenNum[]);
+//
+vector<int> FindOptimumNumber(int targetNum, int brokenNum[], bool* brokenNumPos);
 
 int main() {
 	int result = 0;
@@ -32,31 +35,33 @@ int main() {
 	cin >> targetNum;
 	cin >> brokenCount;
 
-	//ºÎ¼­Áø ¼ıÀÚ¹öÆ°
+	//ï¿½Î¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¹ï¿½Æ°
 	for (int index = 0; index < brokenCount; index++) {
 		cin >> brokenNum[index];
 	}
 
-	// +/-¹öÆ°À¸·Î¸¸ ÀÌµ¿ÀÌ °¡´ÉÇÑÁö ÆÇ´Ü
+	// +/-ï¿½ï¿½Æ°ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½
 	if (DecideOnlyButton(targetNum)) {
 		cout << abs(targetNum - CURRENTNUMBER) << endl;
 	}
 	else {
-		//ÀÌµ¿ÇÏ·Á°í ÇÏ´Â Ã¤³Îº¸´Ù Å«/ÀÛÀº ¼ıÀÚ¸¦ ÀÔ·ÂÇØ¾ßÇÏ´ÂÁö ÆÇ´Ü
+		//ï¿½Ìµï¿½ï¿½Ï·ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ Ã¤ï¿½Îºï¿½ï¿½ï¿½ Å«/ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½Ø¾ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½
 		bool* brokenNumberPosition = CheckTargetNumber(targetNum, brokenNum);
 
-		//Ã¼Å©ÇÑ ¼ıÀÚ°¡ (Ä¿Áö¸é/ÀÛ¾ÆÁö¸é) ±× ´ÙÀ½ ¼ıÀÚ´Â °¡Àå (ÀÛÀº ¼ö/Å« ¼ö)·Î ¸¸µé¾î¾ß µÊ
+		//Ã¼Å©ï¿½ï¿½ ï¿½ï¿½ï¿½Ú°ï¿½ (Ä¿ï¿½ï¿½ï¿½ï¿½/ï¿½Û¾ï¿½ï¿½ï¿½ï¿½ï¿½) ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú´ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½/Å« ï¿½ï¿½)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+		//íŠ¹ì • ìœ„ì¹˜ì˜ ìˆ«ìê°€ (ì»¤ì§€ë©´/ì‘ì•„ì§€ë©´) ë‹¤ìŒ ìˆ«ìë“¤ì€ (ê°€ì¥ ì‘ì€/ê°€ì¥ í°) ìˆ«ìê°€ ë˜ì–´ì•¼ í•œë‹¤.
+
 	}
 
 	return 0;
 }
 
-///<summary> ¼ıÀÚÀÇ ÀÚ¸´¼ö¸¦ ±¸ÇÏ´Â ÇÔ¼ö </summary>
+///<summary> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½ </summary>
 int GetDigitCount(int number) {
 	if (number == 0) return 1;
 	return static_cast<int>(log10(abs(number)) + 1);
 }
-/// <summary>+/-¹öÆ°À¸·Î¸¸ ÀÌµ¿ÀÌ °¡´ÉÇÑÁö ÆÇ´Ü</summary>
+/// <summary>+/-ï¿½ï¿½Æ°ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½</summary>
 bool DecideOnlyButton(int targetNum) {
 	int numLen = GetDigitCount(targetNum);
 	int subNum = abs(targetNum - CURRENTNUMBER);
@@ -66,7 +71,7 @@ bool DecideOnlyButton(int targetNum) {
 	
 	return false;
 }
-///<summary>¼ıÀÚÀÇ ÀÚ¸´ ¼ö ºĞÇØ</summary>
+///<summary>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¸ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</summary>
 template <typename T>
 vector<T> GetDigits(T number) {
 	vector<T> digits;
@@ -80,7 +85,7 @@ vector<T> GetDigits(T number) {
 
 	return digits;
 }
-/// <summary>¹øÈ£°¡ °íÀå³­ ¹öÆ°ÀÎÁö Ã¼Å©</summary>
+/// <summary>ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½å³­ ï¿½ï¿½Æ°ï¿½ï¿½ï¿½ï¿½ Ã¼Å©</summary>
 bool CheckBrokenNumber(int number, int brokenNum[]) {
 	int brokenNumberLength = sizeof(brokenNum) / sizeof(*brokenNum);
 
@@ -91,10 +96,11 @@ bool CheckBrokenNumber(int number, int brokenNum[]) {
 	}
 	return false;
 }
-/// <summary>¸ñÇ¥ Ã¤³Î¿¡ °íÀå³­ ¹öÆ°ÀÇ ¼ıÀÚ°¡ Á¸ÀçÇÏ´ÂÁö Ã¼Å©</summary>
+/// <summary>ï¿½ï¿½Ç¥ Ã¤ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½å³­ ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ Ã¼Å©</summary>
 bool *CheckTargetNumber(int targetNum, int brokenNum[]) {
 	vector<int> targetNumber = GetDigits<int>(targetNum);
-	int targetNumberLength = GetDigitCount(targetNum);
+	//int targetNumberLength = GetDigitCount(targetNum);
+	int targetNumberLength = targetNumber.size();
 	int brokenNumberLength = sizeof(brokenNum) / sizeof(*brokenNum);
 
 	bool brokenNumberPosition[MAXNUMBERLENGTH];
@@ -104,4 +110,40 @@ bool *CheckTargetNumber(int targetNum, int brokenNum[]) {
 	}
 
 	return brokenNumberPosition;
+}
+int FindNumber(int number, int brokenNum[]){
+	int result = number;
+	bool isUp = true;
+
+	if(CheckBrokenNumber(result + 1, brokenNum)){
+		return number;
+	}
+
+	if(isUp){
+		result = FindNumber(number + 1, brokenNum);
+	}
+	else{
+
+	}
+	return result;
+}
+vector<int> FindOptimumNumber(int targetNum, int brokenNum[], bool* brokenNumPos){
+	vector<int> targetNumber = GetDigits<int>(targetNum);
+	int targetNumberLength = targetNumber.size();
+	vector<int> resultNumber;
+	bool isBroken = false;
+
+	for(int i = 0; i < targetNumberLength; i++){
+		if(!brokenNumPos[i]){
+			resultNumber.push_back(targetNumber[i]);
+			continue;
+		}
+
+		if(CheckBrokenNumber(targetNumber[i], brokenNum)){
+				isBroken = true;
+				int number = FindNumber(targetNumber[i], brokenNum);
+		}
+	}
+
+	return resultNumber;
 }
