@@ -22,11 +22,13 @@ vector<T> GetDigits(T number);
 bool CheckBrokenNumber(int number, int brokenNum[]);
 //��ǥ ä�� ���� ���峭 ��ư�� �ִ��� Ȯ��
 bool *CheckTargetNumber(int targetNum, int brokenNum[]);
+int VariationNumber(int number, int brokenNum[], int index);
 int FindNumber(int number, int brokenNum[]);
 //
 vector<int> FindOptimumNumber(int targetNum, int brokenNum[], bool* brokenNumPos);
 
 int main() {
+	vector<int> result;
 	int result = 0;
 	int targetNum;
 	int brokenCount; 
@@ -50,7 +52,7 @@ int main() {
 
 		//üũ�� ���ڰ� (Ŀ����/�۾�����) �� ���� ���ڴ� ���� (���� ��/ū ��)�� ������ ��
 		//특정 위치의 숫자가 (커지면/작아지면) 다음 숫자들은 (가장 작은/가장 큰) 숫자가 되어야 한다.
-
+		result = FindOptimumNumber(targetNum, brokenNum, brokenNumberPosition);
 	}
 
 	return 0;
@@ -111,38 +113,45 @@ bool *CheckTargetNumber(int targetNum, int brokenNum[]) {
 
 	return brokenNumberPosition;
 }
-int FindNumber(int number, int brokenNum[]){
+int VariationNumber(int number, int brokenNum[], int index){
 	int result = number;
-	bool isUp = true;
 
-	if(CheckBrokenNumber(result + 1, brokenNum)){
-		return number;
+	if(CheckBrokenNumber(result + index, brokenNum)){
+		result = FindNumber(result + index, brokenNum);
+		return result;
 	}
 
-	if(isUp){
-		result = FindNumber(number + 1, brokenNum);
-	}
-	else{
-
-	}
 	return result;
+}
+int FindNumber(int number, int brokenNum[]) {
+	int maxNumber = VariationNumber(number, brokenNum, 1);
+	int minNumber = VariationNumber(number, brokenNum, -1);
+
+	if (abs(number - maxNumber) > abs(number - minNumber)) {
+		return minNumber;
+	}
+	return maxNumber;
 }
 vector<int> FindOptimumNumber(int targetNum, int brokenNum[], bool* brokenNumPos){
 	vector<int> targetNumber = GetDigits<int>(targetNum);
-	int targetNumberLength = targetNumber.size();
 	vector<int> resultNumber;
+	int targetNumberLength = targetNumber.size();
 	bool isBroken = false;
 
 	for(int i = 0; i < targetNumberLength; i++){
+		if (isBroken) {
+
+			continue;
+		}
+
 		if(!brokenNumPos[i]){
 			resultNumber.push_back(targetNumber[i]);
 			continue;
 		}
-
-		if(CheckBrokenNumber(targetNumber[i], brokenNum)){
-				isBroken = true;
-				int number = FindNumber(targetNumber[i], brokenNum);
-		}
+		
+		int number = FindNumber(targetNumber[i], brokenNum);
+		resultNumber.push_back(number);
+		isBroken = true;
 	}
 
 	return resultNumber;
