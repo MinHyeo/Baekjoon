@@ -11,6 +11,8 @@
 
 using namespace std;
 
+int GetMinNumber(int minNum, int brokenNum[]);
+int GetMaxNumber(int maxNum, int brokenNum[]);
 //��ȣ ũ�� ���ϴ� �Լ�
 int GetDigitCount(int number);
 //+/-��ư���θ� �̵��� �������� �Ǵ�
@@ -25,11 +27,11 @@ bool *CheckTargetNumber(int targetNum, int brokenNum[]);
 int VariationNumber(int number, int brokenNum[], int index);
 int FindNumber(int number, int brokenNum[]);
 //
-vector<int> FindOptimumNumber(int targetNum, int brokenNum[], bool* brokenNumPos);
+vector<int> FindOptimumNumber(int targetNum, int brokenNum[], bool* brokenNumPos, int minNum, int maxNum);
 
 int main() {
 	vector<int> result;
-	int result = 0;
+
 	int targetNum;
 	int brokenCount; 
 	int brokenNum[BROKENBUTTON];
@@ -42,8 +44,13 @@ int main() {
 		cin >> brokenNum[index];
 	}
 
+	int minAbleNum = 0;
+	int maxAbleNum = 9;
+	minAbleNum = GetMinNumber(minAbleNum, brokenNum);
+	maxAbleNum = GetMaxNumber(maxAbleNum, brokenNum);
+
 	// +/-��ư���θ� �̵��� �������� �Ǵ�
-	if (DecideOnlyButton(targetNum)) {
+	if (DecideOnlyButton(targetNum) || brokenCount >= 10) {
 		cout << abs(targetNum - CURRENTNUMBER) << endl;
 	}
 	else {
@@ -52,12 +59,37 @@ int main() {
 
 		//üũ�� ���ڰ� (Ŀ����/�۾�����) �� ���� ���ڴ� ���� (���� ��/ū ��)�� ������ ��
 		//특정 위치의 숫자가 (커지면/작아지면) 다음 숫자들은 (가장 작은/가장 큰) 숫자가 되어야 한다.
-		result = FindOptimumNumber(targetNum, brokenNum, brokenNumberPosition);
+		result = FindOptimumNumber(targetNum, brokenNum, brokenNumberPosition, minAbleNum, maxAbleNum);
 	}
+
+	for(int i = 0;i<result.size();i++){
+		cout << result[i];
+	}
+	cout << "\n";
 
 	return 0;
 }
 
+int GetMinNumber(int minNum, int brokenNum[]){
+	int index = 0;
+	while(true){
+		if(minNum != brokenNum[index])
+			return minNum;
+
+		minNum += 1;
+		index += 1;
+	}
+}
+int GetMaxNumber(int maxNum, int brokenNum[]){
+	int index = sizeof(brokenNum) / sizeof(*brokenNum) - 1;
+	while(true){
+		if(maxNum != brokenNum[index])
+			return maxNum;
+
+		maxNum -= 1;
+		index -= 1;
+	}
+}
 ///<summary> ������ �ڸ����� ���ϴ� �Լ� </summary>
 int GetDigitCount(int number) {
 	if (number == 0) return 1;
@@ -132,15 +164,19 @@ int FindNumber(int number, int brokenNum[]) {
 	}
 	return maxNumber;
 }
-vector<int> FindOptimumNumber(int targetNum, int brokenNum[], bool* brokenNumPos){
+vector<int> FindOptimumNumber(int targetNum, int brokenNum[], bool* brokenNumPos, int minNum, int maxNum){
 	vector<int> targetNumber = GetDigits<int>(targetNum);
 	vector<int> resultNumber;
 	int targetNumberLength = targetNumber.size();
 	bool isBroken = false;
+	int isUpper = 0;
 
 	for(int i = 0; i < targetNumberLength; i++){
 		if (isBroken) {
-
+			if(isUpper == 1)
+				resultNumber.push_back(minNum);
+			else
+				resultNumber.push_back(maxNum);
 			continue;
 		}
 
@@ -152,6 +188,11 @@ vector<int> FindOptimumNumber(int targetNum, int brokenNum[], bool* brokenNumPos
 		int number = FindNumber(targetNumber[i], brokenNum);
 		resultNumber.push_back(number);
 		isBroken = true;
+		
+		if(targetNumber[i] > number)
+			isUpper = -1;
+		else
+			isUpper = 1;
 	}
 
 	return resultNumber;
