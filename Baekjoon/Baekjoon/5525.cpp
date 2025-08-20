@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include <algorithm>
 using namespace std;
 
@@ -11,17 +10,20 @@ int main() {
 	string s;
 	cin >> s;
 
-	string text = "I";
-	for (int i = 0; i < n; i++) {
-		text += "OI";
+	int count = 0, k = 0;
+	for (int i = 1; i < m - 1;) {
+		if (s[i - 1] == 'I' && s[i] == 'O' && s[i + 1] == 'I') {
+			k++;
+			if (k >= n)
+				count++;
+			i += 2;
+		}
+		else {
+			k = 0;
+			i++;
+		}
 	}
 
-	int count = 0;
-	size_t pos = s.find(text, 0);
-	while (pos != std::string::npos) {
-		count++;
-		pos = s.find(text, pos + 1);
-	}
 	cout << count << "\n";
 
 	return 0;
