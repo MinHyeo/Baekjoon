@@ -1,2 +1,13 @@
-﻿  1120.cpp
-  Baekjoon.vcxproj -> C:\Users\user\Documents\GitHub\Baekjoon\Baekjoon\x64\Debug\Baekjoon.exe
+﻿  2535.cpp
+C:\Users\user\Documents\GitHub\Baekjoon\Baekjoon\Baekjoon\2535.cpp(21,33): error C2065: 'v': 선언되지 않은 식별자입니다.
+C:\Users\user\Documents\GitHub\Baekjoon\Baekjoon\Baekjoon\2535.cpp(21,48): error C2065: 'v': 선언되지 않은 식별자입니다.
+C:\Users\user\Documents\GitHub\Baekjoon\Baekjoon\Baekjoon\2535.cpp(24,7): error C2065: 'v': 선언되지 않은 식별자입니다.
+C:\Users\user\Documents\GitHub\Baekjoon\Baekjoon\Baekjoon\2535.cpp(24,18): error C2065: 'v': 선언되지 않은 식별자입니다.
+C:\Users\user\Documents\GitHub\Baekjoon\Baekjoon\Baekjoon\2535.cpp(24,2): error C2672: 'sort': 일치하는 오버로드된 함수가 없습니다.
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\algorithm(8392,19):
+      'void std::sort(const _RanIt,const _RanIt)'일 수 있습니다.
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\algorithm(8384,19):
+      또는       'void std::sort(const _RanIt,const _RanIt,_Pr)'
+          C:\Users\user\Documents\GitHub\Baekjoon\Baekjoon\Baekjoon\2535.cpp(24,2):
+          'void std::sort(const _RanIt,const _RanIt,_Pr)': 3개의 인수가 필요합니다. 2개가 제공되었습니다.
+  
