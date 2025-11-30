@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5F371762-9988-419C-8F4B-91769B98FE81}|Baekjoon\\Baekjoon.vcxproj|C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1213.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5F371762-9988-419C-8F4B-91769B98FE81}|Baekjoon\\Baekjoon.vcxproj|solutionrelative:Baekjoon\\1213.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5F371762-9988-419C-8F4B-91769B98FE81}|Baekjoon\\Baekjoon.vcxproj|C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\2535.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5F371762-9988-419C-8F4B-91769B98FE81}|Baekjoon\\Baekjoon.vcxproj|solutionrelative:Baekjoon\\2535.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -83,19 +87,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "1213.cpp",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1213.cpp",
+              "RelativeDocumentMoniker": "Baekjoon\\1213.cpp",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1213.cpp",
+              "RelativeToolTip": "Baekjoon\\1213.cpp",
+              "ViewState": "AgIAABoAAAAAAAAAAAAUwCwAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-30T07:12:00.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "2535.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\2535.cpp",
               "RelativeDocumentMoniker": "Baekjoon\\2535.cpp",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\2535.cpp",
               "RelativeToolTip": "Baekjoon\\2535.cpp",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAkwCcAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAowCcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-29T07:13:39.86Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "1674.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1674.cpp",
               "RelativeDocumentMoniker": "Baekjoon\\1674.cpp",
@@ -108,7 +125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "1120.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1120.cpp",
               "RelativeDocumentMoniker": "Baekjoon\\1120.cpp",
@@ -121,7 +138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "1245.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1245.cpp",
               "RelativeDocumentMoniker": "Baekjoon\\1245.cpp",
@@ -134,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "1431.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1431.cpp",
               "RelativeDocumentMoniker": "Baekjoon\\1431.cpp",
@@ -146,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "1325.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1325.cpp",
               "RelativeDocumentMoniker": "Baekjoon\\1325.cpp",
@@ -158,7 +175,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "1283.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1283.cpp",
               "RelativeDocumentMoniker": "Baekjoon\\1283.cpp",
@@ -170,7 +187,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "1262.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1262.cpp",
               "RelativeDocumentMoniker": "Baekjoon\\1262.cpp",
@@ -183,7 +200,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "1049.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1049.cpp",
               "RelativeDocumentMoniker": "Baekjoon\\1049.cpp",
@@ -195,7 +212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "1011.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1011.cpp",
               "RelativeDocumentMoniker": "Baekjoon\\1011.cpp",
@@ -207,7 +224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "1549.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1549.cpp",
               "RelativeDocumentMoniker": "Baekjoon\\1549.cpp",
@@ -219,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "1360.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1360.cpp",
               "RelativeDocumentMoniker": "Baekjoon\\1360.cpp",
@@ -231,7 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "1092.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1092.cpp",
               "RelativeDocumentMoniker": "Baekjoon\\1092.cpp",
@@ -244,7 +261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "1195.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1195.cpp",
               "RelativeDocumentMoniker": "Baekjoon\\1195.cpp",
@@ -256,7 +273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "1005.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1005.cpp",
               "RelativeDocumentMoniker": "Baekjoon\\1005.cpp",
@@ -269,7 +286,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "1082.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Baekjoon\\Baekjoon\\Baekjoon\\1082.cpp",
               "RelativeDocumentMoniker": "Baekjoon\\1082.cpp",
