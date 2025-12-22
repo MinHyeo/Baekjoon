@@ -642,5 +642,11 @@
     <ClCompile Include="12919.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="24313.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="15665.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
