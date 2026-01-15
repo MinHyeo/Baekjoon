@@ -18,7 +18,7 @@ int main() {
 	}
 
 	for (int i = 1; i <= n; i++) {
-		sort(edges[i].begin(), edges[i].end(), greater<int>());
+		sort(edges[i].begin(), edges[i].end());
 	}
 
 	stack<int> s;

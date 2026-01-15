@@ -18,7 +18,7 @@ int main() {
 	}
 
 	for (int i = 1; i <= n; i++) {
-		sort(edges[i].begin(), edges[i].end());
+		sort(edges[i].begin(), edges[i].end(), greater<int>());
 	}
 
 	queue<int> q;
