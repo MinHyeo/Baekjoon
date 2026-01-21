@@ -17,8 +17,8 @@ long long MatrixPath(int x1, int y1, int x2, int y2, int r = -1, int c = -1) {
 			if (i == r && j == c)
 				continue;
 
-			long long from_up = (i > x1) ? dp[i - 1][j] : -1;
-			long long from_left = (j > y1) ? dp[i][j - 1] : -1;
+			long long from_up = (i > x1) ? dp[i - 1][j] : -1e9;
+			long long from_left = (j > y1) ? dp[i][j - 1] : -1e9;
 
 			dp[i][j] = graph[i][j] + max(from_up, from_left);
 		}
