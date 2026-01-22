@@ -729,7 +729,10 @@
     <ClCompile Include="23883.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="2138.cpp">
+    <ClCompile Include="23884.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="1894.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
